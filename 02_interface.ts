@@ -100,3 +100,4 @@ interface StringArray{
 let myArray:StringArray;
 myArray = ["Bob", "Fred"];
 let myStr:string = myArray[0];
+//contunue...
