@@ -208,7 +208,7 @@ interface PenStroke {
 interface Square extends Shape, PenStroke{
     sideLength: number;
 }
-
+//타입 단언 (Type assertions) TS야 나 믿지? 검사하지마~ 라는뜻
 let square = <Square>{};
 square.color = "blue";
 square.sideLength = 10;
