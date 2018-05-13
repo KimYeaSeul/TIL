@@ -48,4 +48,42 @@ let tom:Animal = new Horse("Tommy the Palomino");
 sam.move();
 tom.move(34);
 
-//public, private, protected gogogo
+//public, private, protected
+
+class Animal2 {
+    private name:string;
+    // protected name:string;
+    constructor(theName:string) { this.name = theName; }
+}
+class Rhino extends Animal2{
+    constructor(){ super("Rhino"); }
+    // public getPitch(){return this.name;}
+}
+
+class Employee {
+    private name: string;
+    constructor(theName:string){this.name = theName; }
+}
+
+let animal = new Animal2("Goat");
+let rhino = new Rhino();
+let employee = new Employee("Bob");
+
+animal = rhino ; 
+
+//readonly
+
+class Octopus {
+    readonly name:string;
+    readonly numberOfLegs : number = 8;
+    constructor(theName: string){
+        //매개변수 프로퍼티에서 멤버 생성 및 초기화
+        //constructor(readonly name: string)
+        this.name = theName;
+    }
+}
+
+let dad = new Octopus("Man with the 8 strong legs");
+// dad.name = " rewrite error. name is readonly ";
+
+//접근자 (Accessors)
