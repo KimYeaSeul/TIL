@@ -1,0 +1,14 @@
+{
+  "name": "kakaologin",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "ejs": "~2.4.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
