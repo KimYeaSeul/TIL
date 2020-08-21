@@ -1,7 +1,5 @@
 # TIL
-## hello
-
-### 20180331
+## Today I Learn
 
 #### 카카오톡 로그인 구현해보기(kakaologin_express_react)
   * 환경셋팅하기!
