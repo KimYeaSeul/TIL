@@ -2,7 +2,7 @@
 ## Today I Learn
 ### 2021 May 2nd Week
 
-#### Laying the foundation for the backend
+#### Building the Basics of the Backend
   * Using Koa Web Framework
     * Reference : https://edykim.com/ko/post/introducing-javascript-generator-and-koa.js/
   * Using REST API
