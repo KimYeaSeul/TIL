@@ -23,6 +23,7 @@ books.patch('/', handler); //데이터의 특정 필드를 수정 할 때 사용
 // 6. API handler 분리하기
 const booksCtrl = require('./books.controller');
 books.get('/', booksCtrl.list);
+books.get('/:id', booksCtrl.get);
 books.post('/', booksCtrl.create);
 books.delete('/', booksCtrl.delete);
 books.put('/', booksCtrl.replace);

@@ -1,0 +1,6 @@
+// 용도 : 절대 경로로 불러온 파일도, IDE 에서 자동완성이 제대로 되도록 .jsconfig.json 파일을 프로젝트 루트 디렉토리 만들어주겠습니다.
+{
+    "compilerOptions":{
+        "baseUrl" : "./src"
+    }
+}
