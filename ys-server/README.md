@@ -23,4 +23,15 @@
   * 환경변수를 사용하기 위해서 dotenv or cross-env 를 활용할 수 있음.
   * cross-env 는 error가 뜸으로 dotenv 를 사용하기로 한다..
   * Create Database Schema & Model
-  * Data Create & Select
+  * Studing data Create & Select
+
+#### 210514 Issue
+  * Studying data delete, update, replace.
+  * REST API Test 끝!
+  * 회원인증 시스템 시작!
+    * POST/api/register/local: 회원가입 API
+    * POST /api/login/local: 로그인 API
+    * GET /exists/:key/:value: 이메일 / 아이디 중복확인
+    * POST /logout: 로그아웃
+  * sha256을 이용하여 password 암호화
+  * 모델메소드 만들기( statics or methods )
