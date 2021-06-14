@@ -71,15 +71,25 @@ const bodyParser = require('koa-bodyparser'); //10. bodyparser 미들웨어 적�
 mongoose.Promise = global.Promise; // Node 의 네이티브 Promise 사용
 
 // mongodb 연결
-mongoose.connect(process.env.MONGO_URI, {
-    useMongoClient: true
-}).then(
+// mongoose.connect(process.env.MONGO_URI, {
+//     useMongoClient: true
+// }).then(
+//     (response) => {
+//         console.log('Succesfully connected to mongodb');
+//     }
+// ).catch(e => {
+//     console.error(e);
+// });
+
+// 11. 2-4 버전 mongodb 연결
+mongoose.connect(process.env.MONGO_URI).then(
     (response) => {
-        console.log('Succesfully connected to mongodb');
+        console.log('Successfully connected to mongodb');
     }
 ).catch(e => {
     console.error(e);
 });
+
 // 9. mongoose를 통해 데이터베이스에 연결하기
 
 const port = process.env.PORT || 4000; // 8. port 값 설정
@@ -90,6 +100,6 @@ router.use('/api', api.routes()); // api 라우트를 /api 경로 하위 라우�
 
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(4000, () => {
-    console.log('yeaseul server is listening to port 4000');
-})
+app.listen(port, () => {
+    console.log('yeaseul server is listening to port ' + port);
+});

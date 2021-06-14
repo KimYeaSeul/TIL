@@ -3,7 +3,8 @@
 // 모듈명.변수명
 // 6. API handler 분리하기
 
-const Book = require('../../models/book');
+// const Book = require('../../models/book');
+const Book = require('models/book');
 
 const Joi = require('joi');  // 검증하는 라이브러리
 const { Types:{ObjectId}} = require('mongoose');
@@ -139,6 +140,23 @@ exports.replace = async (ctx) => {
     ctx.body = book;
 }
 
-exports.update = (ctx) => {
-    ctx.body = 'updated';
+exports.update = async (ctx) => {
+    const { id } = ctx.params;
+
+    if(!ObjectId.isValid(id)) {
+        ctx.status = 400;
+        return;
+    }
+
+    let book;
+
+    try {
+        book = await Book.findByIdAndUpdate(id, ctx.request.body, {
+            new : true // 이 값을 넣어줘야 반환하는 값이 업데이트 됨
+        });
+    } catch (e) {
+        return ctx.throw(500, e);
+    }
+
+    ctx.body = book;
 }

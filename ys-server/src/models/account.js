@@ -32,8 +32,8 @@ Account.statics.findByUsername = function(username) {
     return this.findOne({'profile.username':username}).exec();
 };
 
-Account.statics.findBtEmail = funtion(email) {
-    return thiw.findOne({email}).exec();
+Account.statics.findByEmail = function(email) {
+    return this.findOne({email}).exec();
 };
 
 Account.statics.findByEmailOrUsername = function({username, email}) {

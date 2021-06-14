@@ -1,5 +1,8 @@
+// 2-3 스키마 모델 예제
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+
+// 스키마 2개
 
 const Author = new Schema({
     name: String,
@@ -19,4 +22,5 @@ const Book = new Schema({
 });
 
 // Convert Schema to Model and export.
+
 module.exports = mongoose.model('Book', Book);

@@ -35,3 +35,11 @@
     * POST /logout: 로그아웃
   * sha256을 이용하여 password 암호화
   * 모델메소드 만들기( statics or methods )
+
+
+#### 210527 Issue
+  * what is different npm & npm run
+  * 2장 복습
+  * 스키마 : 컬렉션의 형식(타입) 정의
+  * 모델 : 스키마를 통해서 만드는 인스턴스
+  * 3-4 localRegister 에서 에러나서 막힘
