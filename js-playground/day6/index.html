@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            float: left;
+            width: 40%;
+            left: 5%;
+            position: relative;
+        }
+        h3{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h3>switch-case 문법</h3>    
+    <div>
+        <h4>if로 구현</h4>
+        <code>
+            var score = prompt('점수를 입력하세요');<br>
+            if (score === 10) {<br>
+                console.log('A');<br>
+            } else if (score == 9) {<br>
+                console.log('B');<br>
+            } else {<br>
+                console.log('C');<br>
+            }
+        </code>
+    </div>  
+    <div>
+        <h4>switch-case 로 구현</h4>
+        <code>
+            var score = prompt('점수를 입력하세요');<br>
+            switch (score) {<br>
+                case 10:<br>
+                console.log('A);<br>
+                break;<br>
+                case 9:<br>
+                console.log('B');<br>
+                break;<br>
+                default:<br>
+                console.log('C');<br>
+            }<br>
+        </code>
+    </div>  
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h3>객체+ 문법</h3>    
+    <div>
+        <h4>Human</h4>
+        <code>
+            var Human = function (name, hp, pow){
+                this.name = name;
+                this.hp = hp;
+                this.pow = pow;
+                this.attack = function(target){
+                    console.log(this.name + '이'+ target.name+'을 공격했다.');
+                    target.hp -= this.pow;
+                };
+                this.show = function(){
+                    console.log("[%s] %d", this.name, this.hp);
+                };
+            } 
+        </code>
+    </div>  
+    <div>
+        <h4>Food</h4>
+        <code>
+            var Food = function (name, energy){
+                this.name = name;
+                this.energy = energy;
+                this.feed = function(human){
+                    human.hp +=this.energy;
+                };
+            } 
+        </code>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1부터 10000사이의 소수를 출력</h3>
+    <div id = "result"></div>
+    <script>
+        var number = {};
+        number.allNum = [];
+        number.push = function(n){
+            for( var i =2; i<n; i++){
+                if(n%i === 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        number.num = function(max_num){
+            for( var j =2; j<=max_num; j++){
+                if(this.push(j)){
+                    this.allNum.push(j);
+                }
+            }
+        }
+        number.write = function(){
+            var n = 1;
+            var docu = "";
+            for( var z = 0; z< this.allNum.length; z++){
+                docu += `${n}번째 소수: ${this.allNum[z]}`+'<br>';
+                n++;
+            }
+            return document.write(docu);
+        }
+    </script>
+</body>
+</html>

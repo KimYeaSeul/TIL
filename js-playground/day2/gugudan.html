@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>구구단을 외자</h3>
+    <!-- console ver
+    <script>
+        var res;
+        for(var init = 2; init<=3; init++){
+            console.log(init+'단');
+            for(var i = 1 ; i <= 9; i++){
+                res = Number(init*i);
+                console.log(init+' * ' + i + ' = ' + res);
+            }
+        }
+    </script> -->
+    <!-- browser Ver
+    <script>
+        var res;
+        for(var init = 2; init<=3; init++){
+            document.write("<h4>"+init + '단'+'<br></h4>');
+            var i=1;
+            while(i<10){
+                res = Number(init*i);
+                document.write(init+' * ' + i + ' = ' + res+'<br>');
+                i++;
+            }
+        }
+    </script> -->
+    <script>
+        var num = Number(prompt('숫자값을 입력해주세요.', '2~9'));
+        if(num<2 || num>9){
+            alert('오류입니다. 2부터 9까지 입력하랬지!');
+        }else{
+            var i = 1;
+            document.write("<h4>"+num + '단'+'<br></h4>');
+            while(i<10){
+                res = Number(num*i);
+                document.write(num+' * ' + i + ' = ' + res+'<br>');
+                i++;
+            }
+        }
+    </script>
+</body>
+</html>

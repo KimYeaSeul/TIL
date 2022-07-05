@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>함수로 계산기 구현하기</h1>
+    <div id="output">결과값은</div>
+    <script>
+    var input = {count:2};
+    input.getFistValue = function(){
+        num1 = Number(prompt("1번째값을 입력하세요"));
+        return num1;
+    };
+
+    input.getSecondValue=function(){
+        num2 = Number(prompt(input.count+"번째값을 입력하세요"));
+        input.count++;
+        return  num2;
+    };
+
+    input.getOperator=function(){
+        while(true){
+           var op = prompt("연산자를 입력해주세요.");
+            if(op ==='+' ||op ==='-' ||op ==='*' ||op ==='/' ||op ==='q' ){
+                break;
+            }else{
+                alert('wrong');
+            }
+        }
+        return op;
+    };
+
+    var calculate = {};
+    calculate.calculate=function(num1, num2, op){
+        var result;
+        if(op == '+'){
+            result =  num1 + num2;
+        }else if(op == '-'){
+            result = num1 - num2;
+        }else if(op == '*'){
+            result *= num1 * num2;
+        }else if(op == '/'){
+            result /= num1 / num2;
+        }
+        return result;
+    };
+
+    var output = {};
+    output.out = document.getElementById("output");
+    output.print= function(val){
+        this.out.innerHTML = '최종값은 ' + val;
+
+    };
+
+    function main(){
+        var result=0;
+        var n1 = input.getFistValue();
+        while(true){
+            var op = input.getOperator();
+            if(op === 'q') break;
+            var n2 = input.getSecondValue();
+            result = calculate.calculate(n1,n2,op);
+        }
+        output.print(result);
+    }
+    </script>
+</body>
+</html>

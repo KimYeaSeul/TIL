@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <h1>문자열 계산기 구현하기</h1>
+    <div id="output">결과값</div>
+    <script>
+        //반복문을 사용한! 계산기
+        function main() {
+            var out = document.getElementById('output');
+            console.log("Calculator1");
+            //3. 반복문을 통한 무한 연산
+            var b = 2;
+            var result = Number(prompt('1번째 숫자를 입력하세요'));
+            var val;
+            var op;
+            while(1){
+                op = prompt('연산자 혹은 q를 입력하세요');
+                if(op == 'q'){
+                    out.innerHTML = result;
+                    break;
+                }
+                val = Number(prompt(b+'번째 숫자를 입력하세요'));
+                if(op == '+'){
+                    result = result + val;
+                }else if(op == '-'){
+                    result -= val;
+                }else if(op == '*'){
+                    result *= val;
+                }else if(op == '/'){
+                    result /= val;
+                }
+                b++;
+            }
+        }
+        main();
+    </script>
+</body>
+
+</html>

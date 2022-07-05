@@ -1,0 +1,84 @@
+<!-- 연습문제1
+1. 두 수를 입력받아 4칙연산의 결과를 표시해 봅시다.
+2. BMI를 계산하는 프로그램을 작성해 봅시다.
+3. 화씨를 입력받아서 섭씨로 바꾸는 프로그램을 작성해 봅시다.
+4. 입력한 문자열의 길이를 알려주는 프로그램을 작성해 봅시다.
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+     <script>
+            function btn(){
+                num1 = parseFloat(document.getElementById('num1').value);
+                num2 = parseFloat(document.getElementById('num2').value);
+                result1 = (num1 + num2);
+                result2 = num1 - num2;
+                result3 = num1 * num2;
+                result4 = num1 / num2;
+                document.getElementById('result1').innerHTML = `${num1} + ${num2} = ${result1}`;
+                document.getElementById('result2').innerHTML = `${num1} - ${num2} = ${result2}`;
+                document.getElementById('result3').innerHTML = `${num1} * ${num2} = ${result3}`;
+                document.getElementById('result4').innerHTML = `${num1} / ${num2} = ${result4}`;
+            }
+            function bmi(){
+                weight = parseFloat(document.getElementById('weight').value);
+                tall = parseFloat(document.getElementById('tall').value/100);
+                result = weight / (tall*tall);
+                if(result < 18.5){
+                    type = '저체중';
+                }else if(18.5 <= result && result < 22.9){
+                    type = '정상';
+                }else if(23 <= result && result < 24.9){
+                    type = '과체중';
+                }else if(25 <= result && result < 30){
+                    type = '경도비만';
+                }else if(30 <= result && result < 35){
+                    type = '중등도비만';
+                }else if(35 <= result){
+                    type = '고도비만';
+                }
+                document.getElementById('result').innerHTML = `는 ${result.toFixed(3)}으로 ${type}입니다.`;
+            }
+            function conversion(){
+                fah = parseFloat(document.getElementById('Fahrenheit').value);
+                result = (fah - 32)/1.8;
+                document.getElementById('Celcisus').innerHTML = result.toFixed(3)+'도';
+            }
+            function strbtn(){
+                str = document.getElementById('str').value;
+                result = str.length;
+                document.getElementById('strLeng').innerHTML = result;
+            }
+        </script>
+ </head>
+ <body>
+     <h3>문제1. 두 수를 입력받아 4칙연산의 결과를 표시해 봅시다.</h3>
+     <p>4칙연산을 할 두 수를 입력해 주세요.</p>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button id="btn" onclick=btn()> 결과 </button>
+    <p id="result1">? + ? = ?</p>
+    <p id="result2">? - ? = ?</p>
+    <p id="result3">? * ? = ?</p>
+    <p id="result4">? / ? = ?</p>
+
+    <h3>문제2. BMI를 계산하는 프로그램을 작성해 봅시다.</h3>
+    <label for="weight">몸무게(kg):</label><input type="text" id="weight">
+    <label for="tall">신장(cm):</label><input type="text" id="tall"><button onclick=bmi()>결과</button><br>
+    <label for="BMI">BMI지수(체질량지수)</label><span id="result"></span>
+
+    <h3>문제3. 화씨를 입력받아서 섭씨로 바꾸는 프로그램을 작성해 봅시다.</h3>
+    <label for="Fahrenheit">화씨:</label><input type="text" id="Fahrenheit"> <button onclick=conversion()>변환</button>
+    <p>섭씨는 : <span id="Celcisus">?</span></p>
+
+    <h3>문제4. 입력한 문자열의 길이를 알려주는 프로그램을 작성해 봅시다.</h3>
+    <p>문자열을 입력하세요.</p>
+    <input type="text" id="str"> 
+    <button onclick=strbtn()>길이는?</button>
+    <p id="strLeng"></p>
+</body>
+ </html>

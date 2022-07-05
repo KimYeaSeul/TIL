@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        practice2
+    <h3>소수 판별 프로그램</h3>
+    <script>
+        var num = Number(prompt('숫자를 입력해주세요'));
+        var res = true;
+        for(var i = 2; i< num; i++){
+            if(num%i === 0){
+                res = false;
+                break;
+            }
+            console.log(res, i);
+        }
+        if(res){
+            document.write(num + '은 수소입니다.');
+        }else{
+            document.write(num + '은 수소가 아닙니다.');            
+        }
+    </script> -->
+    <!-- gugudan1 -->
+    <h3>소수 판별 프로그램 작성</h3>
+    <script>
+        var isParam = true;
+        var n = Number(prompt('숫자를 입력해주세요'));
+        for( var i = 2; i < n ; i ++){
+            if(n%i === 0){
+                isParam = false;
+                break;
+            }
+        }
+        if(isParam){
+            document.write("소수입니다.");
+        }else{
+            document.write("소수가 아닙니다.");
+        }
+    </script>
+
+</body>
+</html>
